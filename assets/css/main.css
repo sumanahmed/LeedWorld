@@ -1163,13 +1163,13 @@ p.product-descripton{
 
 .cart {
   background: #FE980F;
-  border: 0 none;
-  border-radius: 0;
+  border-radius: 3px;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin-bottom: 6px;
+  margin-left: 3px;
+  padding: 5px 25px;
 }
 .cart2{
   background: #39B3D7;
@@ -1188,6 +1188,13 @@ p.product-descripton{
   font-size: 15px;
   margin-left:10px;
 }
+
+div.cart_quantity_button{
+    width:60px;
+    display: inline-block;
+}
+.cart_quantity_button input[type="number"]{}
+.cart_quantity_button input[type="submit"]{}
 
 .wlist-compare {
     float: left;
@@ -1680,6 +1687,7 @@ p.product-descripton{
   margin-top: 18px;
   border: none;
   padding: 5px 15px;
+    transition: .7s;
 }
 .update{
     margin-left: 40px;
@@ -2432,7 +2440,6 @@ p.product-descripton{
 
 
 /* user admin panel css */
-body{margin-top:50px;}
 .glyphicon { margin-right:10px; }
 .panel-body { padding:0px; }
 .panel-body table tr td { padding-left: 15px }
@@ -2440,4 +2447,13 @@ body{margin-top:50px;}
 
 .section-padding{
     padding: 30px 0;
+}
+
+.place-order{
+    margin-bottom:20px;
+}
+
+.place-order button{
+    padding: 12px 0;
+    font-size:20px;
 }

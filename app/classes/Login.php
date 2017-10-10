@@ -18,15 +18,24 @@ class Login
             $message = "<div class='alert alert-danger'><strong>Error! </strong>Field must not be Empty ! </div>";
             return $message;
         }else{
-            $sql = "INSERT INTO users (name, mobile_no, email, address, city, zip, password, role) VALUES('$name','$mobile_no','$email','$address','$city','$zip','$password', 'user')";
-            $result = mysqli_query($link, $sql);
-            if($result){
-                $message = "<div class='alert alert-success'><strong>Success! </strong>Your Registration Complete.</div>";
+            $mailQuery = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+            $result = mysqli_query($link, $mailQuery);
+            $mailchk = mysqli_fetch_assoc($result);
+            if ($mailchk != false) {
+                $message = "<div class='alert alert-danger'><strong>Error ! </strong> Email Already Exist.</div>";
                 return $message;
             }else{
-                $message = "<div class='alert alert-danger'><strong>Error! </strong>".mysqli_error($link)."</div>";
-                return $message;
+                $sql = "INSERT INTO users (name, mobile_no, email, address, city, zip, password, role) VALUES('$name','$mobile_no','$email','$address','$city','$zip','$password', 'user')";
+                $result = mysqli_query($link, $sql);
+                if($result){
+                    $message = "<div class='alert alert-success'><strong>Success! </strong>Your Registration Complete.</div>";
+                    return $message;
+                }else{
+                    $message = "<div class='alert alert-danger'><strong>Error! </strong>".mysqli_error($link)."</div>";
+                    return $message;
+                }
             }
+
         }
     }
 

@@ -1,15 +1,13 @@
 <?php include 'inc/header.php'; ?>
 <?php
 use App\classes\Product;
+
+if(isset($_GET['id'])){
+    $id = (int)$_GET['id'];
+}
 ?>
 
-    <section id="advertisement">
-        <div class="container">
-            <img src="images/shop/advertisement.jpg" alt="" />
-        </div>
-    </section>
-
-    <section>
+    <section style="margin-top: 30px;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
@@ -18,10 +16,9 @@ use App\classes\Product;
 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Product Items</h2>
-
+                        <h2 class="title text-center">Features Items</h2>
                         <?php
-                        $products = Product::getAllProductInfo();
+                        $products = Product::productByCat($id);
                         if($products){
                             while($value = mysqli_fetch_assoc($products)){
                                 ?>
@@ -40,14 +37,8 @@ use App\classes\Product;
                                     </div>
                                 </div>
                             <?php } }?>
-
-                        <ul class="pagination text-center">
-                            <li class="active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">&raquo;</a></li>
-                        </ul>
                     </div><!--features_items-->
+
                 </div>
             </div>
         </div>

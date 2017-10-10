@@ -11,7 +11,7 @@ if(isset($_SESSION['id'])){
 
 <?php
 if(isset($_POST['login'])){
-    Member::userLoginCheck($_POST);
+    $login = Member::userLoginCheck($_POST);
 }
 ?>
 
@@ -23,6 +23,7 @@ if(isset($_POST['login'])){
                     <div class="login-form"><!--login form-->
                         <h2>Login to your account</h2>
                         <form action="" method="POST">
+                            <?php if(isset($login)){ echo $login; } ?>
                             <input type="email" name="email" placeholder="Email Address" />
                             <input type="password" name="password" placeholder="Password" />
                             <span>

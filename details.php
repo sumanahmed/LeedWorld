@@ -1,4 +1,17 @@
 <?php include 'inc/header.php'; ?>
+<?php
+use App\classes\Product;
+use App\classes\Cart;
+if(isset($_GET['id'])){
+    $id = (int)$_GET['id'];
+    $product = Product::getProductInfoById($id);
+}
+
+if(isset($_POST['submit'])){
+    $quantity = $_POST['quantity'];
+    $addtocart = Cart::addToCart($quantity, $id);
+}
+?>
 	
 	<section style="margin-top: 30px;">
 		<div class="container">
@@ -8,27 +21,34 @@
 				</div>
 				
 				<div class="col-sm-9 padding-right">
+                    <?php
+                    if($product){
+                    ?>
 					<div class="product-details"><!--product-details-->
+                        <?php if(isset($addtocart)){ echo $addtocart; } ?>
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="assets/images/product-details/1.jpg" alt="" />
+								<img src="admin/<?php echo $product['product_image']; ?>" alt="" />
 							</div>
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
-								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                                <p class="product-descripton">This is product Description.This is product Description.This is product Description.This is product Description.This is product Description.This is product Description.This is product Description.</p>
-								<p>Product ID: 1089772</p>
-								<img src="images/product-details/rating.png" alt="" />
+                                <h2><?php echo $product['product_name']; ?></h2>
+                                <p class="product-descripton"><?php echo $product['product_description']; ?></p>
+								<p>Product ID: <?php echo $product['id']; ?></p>
 								<span>
-									<span> 500 Tk</span>
-									<label>Quantity : </label>
-									<input type="text" name="quantity" value="3" />
-									<button type="submit" class="btn btn-default cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
-									</button>
+									<span> <?php echo $product['product_price']; ?> Tk</span>
+									<form action="" method="POST">
+                                        <label>Quantity : </label>
+                                        <input type="number" name="quantity" value="1" />
+                                        <button type="submit" name="submit" class="btn btn-default cart">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            Add to cart
+                                        </button>
+                                    </form>
+                                    <?php
+                                    if(isset($_SESSION['id'])){
+                                    ?>
                                     <div class="wlist-compare">
                                         <button type="submit" class="btn btn-info cart2">
                                             <i class="fa fa-plus-square"></i>
@@ -39,12 +59,13 @@
                                             Add to compare
                                         </button>
                                     </div>
+                                    <?php } ?>
 								</span>
 								<a href=""><img src="assets/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->
-
+                    <?php } ?>
                      <div class="features_items"><!--features_items-->
                         <h2 class="title text-center">Related Products</h2>
                         <div class="col-sm-4">

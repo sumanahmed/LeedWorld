@@ -106,10 +106,10 @@ class Product{
 
 
     public function updateProductInfo($id, $data){
+        $link = Database::db_connection();
         extract($data);
         $imageName = $_FILES['product_image']['name'];
         if($imageName){
-           $link = Database::db_connection();
            $imageUrl = Product::saveProductImage();
 
            $sql = "SELECT * FROM products WHERE id='$id'";
@@ -117,7 +117,7 @@ class Product{
            $delImage = mysqli_fetch_assoc($result);
            unlink($delImage['product_image']);
 
-           $sql = "UPDATE products SET product_name='$product_name', category_id='$category_id', product_description='$product_description', product_image='$$imageUrl', product_price='$product_price', product_point='$product_point', publication_status='$publication_status' WHERE id='$id' ";
+           $sql = "UPDATE products SET product_name='$product_name', category_id='$category_id', product_description='$product_description', product_image='$imageUrl', product_price='$product_price', product_point='$product_point', publication_status='$publication_status' WHERE id='$id' ";
            $update = mysqli_query($link, $sql);
            if($update){
                $message = "<div class='alert alert-success'><strong>Success! </strong>Prdouct Information Updated Successfylly.</div>";
@@ -127,7 +127,6 @@ class Product{
                return $message;
            }
         }else{
-            $link = Database::db_connection();
             $sql = "UPDATE products SET product_name='$product_name', category_id='$category_id', product_description='$product_description',  product_price='$product_price', product_point='$product_point', publication_status='$publication_status' WHERE id='$id' ";
             $update = mysqli_query($link, $sql);
             if($update){
@@ -154,7 +153,7 @@ class Product{
         }
     }
 
-    public  function deleteBlogInfoById($id){
+    public  function deleteProductInfoById($id){
         $link = Database::db_connection();
 
         $sql ="SELECT * FROM products WHERE id = '$id' ";
@@ -181,6 +180,18 @@ class Product{
         $text = substr($text, 0, strrpos($text, ' '));
         $text = $text.".....";
         return $text;
+    }
+
+    public function productByCat($id){
+        $link = Database::db_connection();
+        $sql = "SELECT * FROM products WHERE category_id='$id'";
+        $result = mysqli_query($link, $sql);;
+        if($result){
+            return $result;
+        }else{
+            $message = "<div class='alert alert-danger'><strong>Error! </strong>".mysqli_errno($link)."</div>";
+            return $message;
+        }
     }
 
 

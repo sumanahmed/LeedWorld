@@ -1,3 +1,6 @@
+<?php
+use App\classes\Category;
+?>
 <footer id="footer"><!--Footer-->
     <div class="footer-widget">
         <div class="container">
@@ -10,31 +13,32 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="single-widget">
+                        <h2>Category</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <?php
+                            $categories = Category::getAllCategory();
+                            if($categories){
+                            while ($cat = mysqli_fetch_assoc($categories)){
+                            ?>
+                            <li><a href="productbycat.php?id=<?php echo $cat['category_id']; ?>"><?php echo $cat['category_name']; ?></a></li>
+                            <?php } } ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="single-widget">
                         <h2>Quock Shop</h2>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">T-Shirt</a></li>
-                            <li><a href="#">Mens</a></li>
-                            <li><a href="#">Womens</a></li>
-                            <li><a href="#">Gift Cards</a></li>
-                            <li><a href="#">Shoes</a></li>
+                            <li><a href="#">Mirpur</a></li>
+                            <li><a href="#">Malibag</a></li>
+                            <li><a href="#">Uttara</a></li>
+                            <li><a href="#">Jatrabari</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="single-widget">
-                        <h2>Policies</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privecy Policy</a></li>
-                            <li><a href="#">Refund Policy</a></li>
-                            <li><a href="#">Billing System</a></li>
-                            <li><a href="#">Ticket System</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="single-widget">
-                        <h2>About Shopper</h2>
+                        <h2>Feature Items</h2>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="#">Company Information</a></li>
                             <li><a href="#">Careers</a></li>
@@ -75,7 +79,7 @@
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.scrollUp.min.js"></script>
-<script src="assets/js/price-range.js"></script>
+<script src="assets/js/Drift.js"></script>
 <script src="assets/js/jquery.prettyPhoto.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

@@ -1,6 +1,10 @@
 <?php
+if(!isset($_SESSION)){
+    session_start();
+}
 include 'vendor/autoload.php';
 use App\classes\Member;
+use App\classes\Cart;
 if(isset($_GET['action']) && $_GET['action'] == 'logout'){
     Member::userLogOut();
 }
@@ -16,7 +20,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="assets/css/price-range.css" rel="stylesheet">
     <link href="assets/css/animate.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
@@ -71,12 +74,21 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="index.php" class="active"><i class="fa fa-home"></i> Home</a></li>
-                            <li><a href="shop.php"><i class="fa fa-star"></i> Shop</a></li>
-                            <li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <?php $chkcart =  Cart::checkCartTable();
+                            if(!empty($chkcart)){ ?>
                             <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            <?php } ?>
+                            <?php if(isset($_SESSION['id'])){ ?>
+                            <li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <?php } ?>
                             <li><a href="contact.php"><i class="fa fa-crosshairs"></i> Contact</a></li>
-                            <li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
-                            <li><a href="?action=logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                            <li><a href="member.php"><i class="fa fa-user"></i> Member</a></li>
+                            <?php
+                            if(isset($_SESSION['id'])){ ?>
+                                <li><a href="?action=logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                           <?php }else{ ?>
+                                <li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+                            <?php }?>
                         </ul>
                     </div>
                 </div>

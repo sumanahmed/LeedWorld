@@ -3,9 +3,9 @@
 use App\classes\Product;
 ?>
 <?php
-if (isset($_GET['id'])){
-    $id = $_GET['id'];
-    $delete = Product::deleteBlogInfoById($id);
+if (isset($_GET['delid'])){
+    $delid = $_GET['delid'];
+    $delete = Product::deleteProductInfoById($delid);
 }
 
 if(isset($_GET['status'])){
@@ -68,7 +68,7 @@ if(isset($_GET['status'])){
                                             <a class="btn btn-info btn-xs" title="Edit Product" href="edit-product.php?id=<?php echo $value['id']; ?>">
                                                 <span class="glyphicon glyphicon-edit"></span>
                                             </a>
-                                            <a class="btn btn-danger btn-xs" title="Delete Product" href="?id=<?php echo $value['id']; ?>" onclick="return confirm('Are you sure to delete this Blog ?');">
+                                            <a class="btn btn-danger btn-xs" title="Delete Product" href="?delid=<?php echo $value['id']; ?>" onclick="return confirm('Are you sure to delete this Blog ?');">
                                                 <span class="glyphicon glyphicon-trash"></span>
                                             </a>
                                         </td>

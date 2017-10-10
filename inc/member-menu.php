@@ -100,19 +100,17 @@
                     <table class="table">
                         <tr>
                             <td>
-                                <a href="change-password.php">Change Password</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
                                 <a href="message.php"> Message </a> <span class="label label-info">5</span>
                             </td>
                         </tr>
                         <tr>
-                            <td><?php
-                                $id = $_SESSION['id'];
-                                ?>
+                            <td> <?php $id = $_SESSION['id']; ?>
                                 <a href="profile.php?id=<?php echo $id; ?>"> Profile Details</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="change-password.php">Change Password</a>
                             </td>
                         </tr>
                     </table>
