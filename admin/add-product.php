@@ -57,12 +57,6 @@ if(isset($_POST['btn'])){
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="product_point" class="col-sm-3">Product Point</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="product_point" id="product_point" placeholder="Enter Product Point" required >
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="publication_status" class="col-sm-3">Publication Status</label>
                                         <div class="col-sm-9">
                                             <select name="publication_status" id="publication_status" class="form-control">

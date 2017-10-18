@@ -13,7 +13,7 @@ if(isset($_POST['update'])){
 }
 ?>
 
-    <section style="margin-top: 30px;">
+    <section style="margin-top: 30px; min-height: 430px;">
         <div class="container">
             <div class="row">
                 <?php include 'inc/member-menu.php'; ?>

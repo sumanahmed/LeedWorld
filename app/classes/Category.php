@@ -4,7 +4,7 @@ use App\classes\Database;
 
 class Category {
 
-    public  function addCategory($data){
+    public static function addCategory($data){
         $link = Database::db_connection();
         $categoryName = mysqli_real_escape_string($link, $data['category_name']);
 
@@ -25,14 +25,14 @@ class Category {
     }
 
 
-    public  function getAllCategory(){
+    public static function getAllCategory(){
         $link = Database::db_connection();
         $sql = "SELECT * FROM categories ORDER BY category_id ASC";
         $result = mysqli_query($link, $sql);
         return $result;
     }
 
-    public  function getCategoryById($id){
+    public static function getCategoryById($id){
         $link = Database::db_connection();
         $sql = "SELECT * FROM categories WHERE category_id = '$id'";
         $result = mysqli_query($link, $sql);
@@ -40,7 +40,7 @@ class Category {
         return $value;
     }
 
-    public function updateCategory($id, $data){
+    public static function updateCategory($id, $data){
         $link = Database::db_connection();
         $categoryName = mysqli_real_escape_string($link, $data['category_name']);
 
@@ -60,7 +60,7 @@ class Category {
         }
     }
 
-    public  function deleteCategoryById($id){
+    public static function deleteCategoryById($id){
         $link = Database::db_connection();
         $sql = "DELETE FROM categories WHERE category_id = '$id'";
         $result = mysqli_query($link, $sql);

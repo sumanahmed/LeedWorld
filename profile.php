@@ -21,7 +21,7 @@ if(isset($_POST['update'])){
 
 ?>
 
-    <section style="margin-top: 30px;">
+    <section style="margin-top: 30px; min-height: 430px;">
         <div class="container">
             <div class="row">
                 <?php include 'inc/member-menu.php'; ?>
@@ -56,18 +56,7 @@ if(isset($_POST['update'])){
                                     <textarea class="form-control" rows="6" name="address" id="address" style="resize: vertical;"><?php echo $value['address']; ?></textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="city" class="col-sm-2 col-sm-offset-1">City</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" type="text" name="city" id="city" value="<?php echo $value['city']; ?>" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="zip" class="col-sm-2 col-sm-offset-1">Zip Code</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" type="text" name="zip" id="zip" value="<?php echo $value['zip']; ?>" >
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-offset-1"></label>
                                 <div class="col-sm-9">

@@ -29,37 +29,38 @@ if(isset($_POST['btn'])){
                                         <div class="form-group">
                                             <label for="name" class="col-sm-3">Name</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" name="name" id="name" value="<?php echo $user['name']; ?>" >
+                                                <input class="form-control" type="text" name="name" id="name" value="<?php echo $user['name']; ?>" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="mobile_no" class="col-sm-3">Mobile No</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" name="mobile_no" id="mobile_no" value="<?php echo $user['mobile_no']; ?>" >
+                                                <input class="form-control" type="text" name="mobile_no" id="mobile_no" value="<?php echo $user['mobile_no']; ?>" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="referral_id" class="col-sm-3">Referral ID</label>
+                                            <div class="col-sm-9">
+                                                <input class="form-control" type="text" name="referral_id" id="referral_id" value="<?php echo $user['referral_id']; ?>" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mobile_no" class="col-sm-3">Designation</label>
+                                            <div class="col-sm-9">
+                                                <input class="form-control" type="text" name="	designation" id="designation" value="<?php echo $user['designation']; ?>" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="email" class="col-sm-3">Email</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" name="email" id="email" value="<?php echo $user['email']; ?>" >
+                                                <input class="form-control" type="text" name="email" id="email" value="<?php echo $user['email']; ?>" readonly>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="city" class="col-sm-3">City</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="text" name="city" id="city" value="<?php echo $user['city']; ?>" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="zip" class="col-sm-3">Zip Code</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="text" name="zip" id="zip" value="<?php echo $user['zip']; ?>" >
-                                            </div>
-                                        </div>
+
                                         <div class="form-group">
                                             <label for="role" class="col-sm-3">User Role</label>
                                             <div class="col-sm-9">
-                                                <select name="role" id="role">
+                                                <select name="role" id="role" class="form-control">
                                                     <option <?php if($user['role'] == 'admin'){echo "selected"; } ?> value="admin">Admin</option>
                                                     <option <?php if($user['role'] == 'agent'){echo "selected"; } ?> value="agent">Agent</option>
                                                     <option <?php if($user['role'] == 'user'){echo "selected"; } ?> value="user">User</option>

@@ -43,6 +43,13 @@ header("Cache-Control: max-age=2592000");
     <!-- MetisMenu CSS -->
     <link href="assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- DataTables CSS -->
+    <link href="assets/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="assets/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+
     <!-- Custom CSS -->
     <link href="assets/dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -303,6 +310,18 @@ header("Cache-Control: max-age=2592000");
                         <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-hand-o-right fa-fw"></i> Pages Information<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="about-page.php">About Page</a>
+                            </li>
+                            <li>
+                                <a href="copyright.php">Copyright Text</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-hand-o-right fa-fw"></i> Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -315,6 +334,21 @@ header("Cache-Control: max-age=2592000");
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Registration Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="membership-list.php"> Membership list</a>
+                            </li>
+                            <li>
+                                <a href="achiever.php">Achiever list </a>
+                            </li>
+                            <li>
+                                <a href="achiever.php">Achiever list </a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                     <li>
                         <a href="#"><i class="fa fa-sitemap fa-fw"></i> Product Management<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -342,22 +376,49 @@ header("Cache-Control: max-age=2592000");
                         <a href="#"><i class="fa fa-files-o fa-fw"></i> Point Management<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="create-point.php">Create Point</a>
+                                <a href="point-create.php">Point Create</a>
                             </li>
                             <li>
-                                <a href="transer-point.php">Transfer Point</a>
+                                <a href="point-transer.php">Point Transfer</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-history fa-fw"></i> History<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-history fa-fw"></i> All History<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="user-history.php">User History</a>
                             </li>
                             <li>
-                                <a href="product-deliver-history.php">Product Delivery History</a>
+                                <a href="product-order-history.php">Product Order History</a>
+                            </li>
+                            <li>
+                                <a href="product-delivery-history.php">Product Delivery History</a>
+                            </li>
+                            <li>
+                                <a href="point-transfer-history.php">Point Transfer History</a>
+                            </li>
+                            <li>
+                                <a href="withdraw-history.php">Withdraw History</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-list-alt"></i> Notice Board<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="contact-info.php">Contact Information</a>
+                            </li>
+                            <li>
+                                <a href="">New notice</a>
+                            </li>
+                            <li>
+                                <a href="">About Us</a>
+                            </li>
+                            <li>
+                                <a href="socials.php">Social Button</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

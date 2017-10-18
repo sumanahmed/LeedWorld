@@ -11,7 +11,7 @@ namespace App\classes;
 
 class Database
 {
-    public  function db_connection(){
+    public static function db_connection(){
         $hostName = "localhost";
         $userName = "root";
         $password = "";

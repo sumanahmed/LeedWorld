@@ -35,18 +35,7 @@
                                             <textarea class="form-control" rows="10" name="address" id="address" style="resize: vertical;">assadsa</textarea>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="city" class="col-sm-3">City</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="city" id="city" value="city" >
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="zip" class="col-sm-3">Zip Code</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="zip" id="zip" value="1212" >
-                                        </div>
-                                    </div>
+
                                     <div class="form-group">
                                         <label for="password" class="col-sm-3">Old Password</label>
                                         <div class="col-sm-9">

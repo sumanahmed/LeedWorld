@@ -19,7 +19,17 @@ use App\classes\Product;
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
                         <h2 class="title text-center">Product Items</h2>
-
+                        <!-- pagination -->
+                        <?php
+                        $per_page = 3;
+                        if (isset($_GET['page'])) {
+                            $page = $_GET['page'];
+                        }else{
+                            $page=1;
+                        }
+                        $start_form = ($page-1)*$per_page;
+                        ?>
+                        <!-- pagination -->
                         <?php
                         $products = Product::getAllProductInfo();
                         if($products){
@@ -40,14 +50,20 @@ use App\classes\Product;
                                     </div>
                                 </div>
                             <?php } }?>
-
-                        <ul class="pagination text-center">
-                            <li class="active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">&raquo;</a></li>
-                        </ul>
                     </div><!--features_items-->
+                    <!-- pagination -->
+                    <?php
+                    $get_row = Product::getProductRow();
+                    $total_rows = mysqli_fetch_assoc($get_row);
+                    $total_rows = count($total_rows);
+                    $total_pages = ceil($total_rows/$per_page);
+                    echo "<span class='pagination'><a href='index.php?page=1'>".'First Page'."</a>";
+                    for ($i=1; $i<=$total_pages; $i++) {
+                        echo "<a href='index.php?page=".$i."'>".$i."</a>";
+                    }
+                    echo "<a href='index.php?page=$total_pages'>".'Last Page'."</a></span>"; ?>
+                    <!-- pagination -->
+
                 </div>
             </div>
         </div>

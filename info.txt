@@ -1,3 +1,61 @@
 www.leedworld.net/cpanel
 user: leedworld
 pass: zxcZXC06
+
+
+db name  leedworld_db
+db user  leedworld_usr
+db pass  AE2D4-6)}bE~
+
+
+
+Email : leedworld2017@gmail.com
+Facebook : https://www.facebook.com/Leed-World-996169314064878/
+Address : H-429, 2nd Floor, Malibag Railgate Bazar, Dhaka
+
+Sign up form
+Full Name :
+User Name :
+E-Mail:
+Mobile:
+Soponser id:
+Password :
+Confirm Password :
+
+Login page:
+User id :
+Password :
+
+
+1) Registration management 
+    # Memberships list 
+    # Achiever list 
+    # Agent create 
+2) Product Management 
+   # Product upload 
+   # Product & point transfer 
+3) Point Management 
+    # Point create 
+    # Point transfer 
+4) All History 
+   # Product delivered & undelivered history 
+   # point transfer history 
+   # Withdraw history 
+5) Notice Board 
+    # New Notice 
+    # Contact information 
+    # About us
+
+
+
+Login name change kore singup free likhen
+Logo gula add kore diyen
+New user form e user id add hobe.
+R login korbe user id diye
+
+Vi amr kopale kal soni ache.
+Registration page r login page alada hobe
+
+
+Copyright : Copyright 2017 leedworld online shoping
+All Rights Reserved. Designed by leed world

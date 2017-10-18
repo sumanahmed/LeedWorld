@@ -49,14 +49,6 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a href="product-delivery.php"><span class="glyphicon glyphicon-align-justify">
-                            </span> Product Delivery</a>
-                </h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
                             </span> History</a>
                 </h4>
@@ -77,6 +69,11 @@
                         <tr>
                             <td>
                                 <span class="glyphicon glyphicon-barcode"></span><a href="point-transfer-history.php"> Point Transfer History</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="glyphicon glyphicon-barcode"></span><a href="product-order-list.php"> Product Order List</a>
                             </td>
                         </tr>
                         <tr>

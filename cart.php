@@ -68,7 +68,7 @@ if(isset($_POST['update'])){
 							</td>
 						</tr>
                         <?php $sum = $sum+$total; ?>
-                <?php } }?>
+                <?php } } ?>
 
 					</tbody>
 				</table>

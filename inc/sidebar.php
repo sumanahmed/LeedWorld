@@ -1,14 +1,21 @@
 <?php
 use App\classes\Category;
+use App\classes\Product;
+?>
+<?php
+/*if(isset($_POST['submit'])){
+   $search = $_POST['search'];
+   $search = Product::productSearch($search);
+}*/
 ?>
 <div class="left-sidebar">
     <h2>Search Products</h2>
     <div class="search-bar"><!--search products-->
-        <form action="" method="POST">
+        <form action="search.php" method="POST">
             <div class="input-group">
                 <input type="text" name="search" class="form-control" placeholder="Product Search">
                 <div class="input-group-btn">
-                    <button class="btn btn-default" type="button"><i class="fa fa-search fa-fw"></i> </button>
+                    <button class="btn btn-default" name="submit" type="submit"><i class="fa fa-search fa-fw"></i> </button>
                 </div>
             </div>
         </form>

@@ -14,53 +14,30 @@ if(isset($_POST['login'])){
     $login = Member::userLoginCheck($_POST);
 }
 ?>
-
-
-	<section id="form"><!--form-->
-		<div class="container">
-			<div class="row">
-                <div class="col-sm-4 col-sm-offset-1">
-                    <div class="login-form"><!--login form-->
-                        <h2>Login to your account</h2>
-                        <form action="" method="POST">
-                            <?php if(isset($login)){ echo $login; } ?>
-                            <input type="email" name="email" placeholder="Email Address" />
-                            <input type="password" name="password" placeholder="Password" />
-                            <span>
-								<input type="checkbox" class="checkbox">
-								Keep me signed in
-							</span>
-                            <button type="submit" name="login" class="btn btn-default">Login</button>
-                        </form>
-                    </div><!--/login form-->
+<section id="form" style="min-height: 400px;"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="login-form"><!--login form-->
+                    <h2>Sign Up Free</h2>
+                    <form action="" method="POST">
+                        <?php if(isset($login)){ echo $login; } ?>
+                        <input type="text" name="user_id" placeholder="Enter User ID" />
+                        <input type="password" name="password" placeholder="Enter Password" />
+                        <button type="submit" name="login" class="btn btn-default">Login</button>
+                    </form>
+                </div><!--/login form-->
+                <div class="registration-page">
+                    <p>If you have no Account. To Create Account</p>
+                    <a href="registration.php" class="btn btn-info btn-lg">REGISTRATION</a>
                 </div>
-				<div class="col-sm-1">
-					<h2 class="or">OR</h2>
-				</div>
-				<div class="col-sm-4">
-					<div class="signup-form"><!--sign up form-->
-                        <?php
-                        if(isset($_POST['register'])){
-                            $regUsr = Member::registerUser($_POST);
-                        }
-                        ?>
-                        <?php if(isset($regUsr)){ echo $regUsr; } ?>
-						<h2>New User Signup!</h2>
-						<form action="" method="POST">
-							<input type="text" name="name" placeholder="Name"/>
-							<input type="text" name="mobile_no" placeholder="Mobile Number"/>
-							<input type="email" name="email" placeholder="Email Address"/>
-                            <input type="text" name="address" placeholder="Address" id="">
-							<input type="text" name="city" placeholder="City"/>
-							<input type="number" name="zip"  placeholder="zip code"/>
-							<input type="password" name="password"  placeholder="Password"/>
-							<button type="submit" name="register" class="btn btn-default">Signup</button>
-						</form>
-					</div><!--/sign up form-->
-				</div>
-			</div>
-		</div>
-	</section><!--/form-->
+
+            </div>
+
+
+        </div>
+    </div>
+</section><!--/form-->
 
 
 <?php include 'inc/footer.php'; ?>
